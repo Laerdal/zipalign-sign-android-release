@@ -12,6 +12,10 @@ export async function signApkFile(
     keyPassword?: string,
     doZipAlign?: boolean,
     usePageAlign?: boolean,
+    v1SigningEnabled?: boolean,
+    v2SigningEnabled?: boolean,
+    v3SigningEnabled?: boolean,
+    v4SigningEnabled?: boolean,
 ): Promise<string> {
     core.debug('Zipaligning APK file');
 
@@ -72,6 +76,24 @@ export async function signApkFile(
 
     if (keyPassword) {
         args.push('--key-pass', `pass:${keyPassword}`);
+    }
+
+    // Check if v1SigningEnabled parameter was passed
+
+    if (v1SigningEnabled != null) {
+        args.push('--v1-signing-enabled', v1SigningEnabled.toString());
+    }
+
+    if (v2SigningEnabled != null) {
+        args.push('--v2-signing-enabled', v2SigningEnabled.toString());
+    }
+
+    if (v3SigningEnabled != null) {
+        args.push('--v3-signing-enabled', v3SigningEnabled.toString());
+    }
+
+    if (v4SigningEnabled != null) {
+        args.push('--v4-signing-enabled', v4SigningEnabled.toString());
     }
 
     args.push(apkFile);

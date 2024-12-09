@@ -28,6 +28,18 @@ inputs:
     description: 'Page-aligns uncompressed .so files'
     required: false
     default: 'true'
+  v1SigningEnabled:
+    description: 'Enable v1 signing'
+    required: false
+  v2SigningEnabled:
+    description: 'Enable v2 signing'
+    required: false
+  v3SigningEnabled:    
+    description: 'Enable v3 signing'
+    required: false
+  v4SigningEnabled:    
+    description: 'Enable v4 signing'
+    required: false
 outputs:
   signedReleaseFile:
     description: 'The signed release APK or AAB file, if single'
