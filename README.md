@@ -94,7 +94,7 @@ can be used to refer to each signed release file.
 
 ```yaml
 steps:
-  - uses: kevin-david/zipalign-sign-android-release@v2
+  - uses: Laerdal/zipalign-sign-android-release@v2
     id: sign_app
     with:
       releaseDirectory: app/build/outputs/apk/release
@@ -125,7 +125,7 @@ before being used in a release action.
 
 ```yaml
 steps:
-  - uses: kevin-david/zipalign-sign-android-release@v2
+  - uses: Laerdal/zipalign-sign-android-release@v2
     id: sign_app
     with:
       releaseDirectory: app/build/outputs/apk/release
